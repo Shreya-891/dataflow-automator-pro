@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataFlow Automator Pro | Enterprise Workflow & Data Intelligence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="dark-theme">
+    <!-- Background Animated Mesh -->
+    <div class="mesh-bg"></div>
+
+    <div class="app-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-icon">⚡</div>
+                <div class="brand-text">
+                    <h2>DataFlow</h2>
+                    <span>Automator Pro</span>
+                </div>
+            </div>
+
+            <nav class="nav-menu">
+                <button class="nav-item active" data-tab="overview">
+                    <span class="nav-icon">📊</span> Overview & Metrics
+                </button>
+                <button class="nav-item" data-tab="file-manager">
+                    <span class="nav-icon">📁</span> File Automation
+                </button>
+                <button class="nav-item" data-tab="excel-studio">
+                    <span class="nav-icon">📈</span> Excel & Data Studio
+                </button>
+                <button class="nav-item" data-tab="pdf-studio">
+                    <span class="nav-icon">📑</span> PDF Studio & Invoicing
+                </button>
+                <button class="nav-item" data-tab="web-scraper">
+                    <span class="nav-icon">🌐</span> Web Scraper Engine
+                </button>
+                <button class="nav-item" data-tab="email-center">
+                    <span class="nav-icon">✉️</span> Email Automation
+                </button>
+                <button class="nav-item" data-tab="pipelines">
+                    <span class="nav-icon">⚡</span> Automated Pipelines
+                </button>
+                <button class="nav-item" data-tab="live-logs">
+                    <span class="nav-icon">📜</span> Live Stream Logs
+                </button>
+                <button class="nav-item" data-tab="project-report">
+                    <span class="nav-icon">📕</span> Project Report (PDF)
+                </button>
+            </nav>
+
+            <div class="system-status-card">
+                <div class="status-indicator online"></div>
+                <div class="status-info">
+                    <div class="status-title">Engine Operational</div>
+                    <div class="status-meta" id="sys-uptime">Localhost :5000</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Workspace Area -->
+        <main class="main-content">
+            <!-- Top Navbar -->
+            <header class="topbar">
+                <div class="page-title-group">
+                    <h1 id="page-title">Overview & Telemetry</h1>
+                    <p id="page-desc">Real-time automation engine monitoring and rapid execution console</p>
+                </div>
+                <div class="topbar-actions">
+                    <div class="quick-stat-badge">
+                        <span class="badge-label">CPU:</span>
+                        <span class="badge-val" id="top-cpu">0%</span>
+                    </div>
+                    <div class="quick-stat-badge">
+                        <span class="badge-label">RAM:</span>
+                        <span class="badge-val" id="top-ram">0%</span>
+                    </div>
+                    <button class="btn btn-primary" id="btn-quick-pipeline">⚡ Run Pipeline</button>
+                </div>
+            </header>
+
+            <!-- TAB 1: OVERVIEW -->
+            <section id="tab-overview" class="tab-pane active">
+                <div class="metrics-grid">
+                    <div class="card metric-card">
+                        <div class="metric-header">
+                            <span class="metric-title">Automated Tasks</span>
+                            <span class="metric-icon">🚀</span>
+                        </div>
+                        <div class="metric-val" id="m-tasks">1,480</div>
+                        <div class="metric-sub text-green">↑ 100% Success Rate</div>
+                    </div>
+                    <div class="card metric-card">
+                        <div class="metric-header">
+                            <span class="metric-title">Data Cleaned</span>
+                            <span class="metric-icon">🧹</span>
+                        </div>
+                        <div class="metric-val" id="m-data">145k Rows</div>
+                        <div class="metric-sub text-cyan">Pandas & OpenPyXL Engine</div>
+                    </div>
+                    <div class="card metric-card">
+                        <div class="metric-header">
+                            <span class="metric-title">PDFs Synthesized</span>
+                            <span class="metric-icon">📑</span>
+                        </div>
+                        <div class="metric-val" id="m-pdfs">342</div>
+                        <div class="metric-sub text-purple">ReportLab High-Res Engine</div>
+                    </div>
+                    <div class="card metric-card">
+                        <div class="metric-header">
+                            <span class="metric-title">Emails Delivered</span>
+                            <span class="metric-icon">✉️</span>
+                        </div>
+                        <div class="metric-val" id="m-emails">89</div>
+                        <div class="metric-sub text-blue">SMTP & Sandbox Dispatcher</div>
+                    </div>
+                </div>
+
+                <div class="dashboard-split">
+                    <div class="card flex-2">
+                        <div class="card-header">
+                            <h3>⚡ Quick Automation Launchpad</h3>
+                            <span class="badge-tag">One-Click Actions</span>
+                        </div>
+                        <div class="launchpad-grid">
+                            <div class="launch-item" onclick="switchTab('file-manager')">
+                                <div class="launch-icon">📁</div>
+                                <h4>File Organization</h4>
+                                <p>Categorize folders, eliminate SHA-256 duplicates & batch rename.</p>
+                            </div>
+                            <div class="launch-item" onclick="switchTab('excel-studio')">
+                                <div class="launch-icon">📊</div>
+                                <h4>Data & Excel Studio</h4>
+                                <p>Ingest CSV/XLSX, auto-clean nulls, build pivot summaries.</p>
+                            </div>
+                            <div class="launch-item" onclick="switchTab('pdf-studio')">
+                                <div class="launch-icon">📑</div>
+                                <h4>PDF Report & Invoice</h4>
+                                <p>Generate branded executive summaries with embedded charts.</p>
+                            </div>
+                            <div class="launch-item" onclick="switchTab('web-scraper')">
+                                <div class="launch-icon">🌐</div>
+                                <h4>Web Scraper</h4>
+                                <p>Harvest live e-commerce, tech news & quotes into data tables.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card flex-1">
+                        <div class="card-header">
+                            <h3>📜 Live Activity Stream</h3>
+                            <button class="btn btn-sm btn-ghost" onclick="fetchLogs()">Refresh</button>
+                        </div>
+                        <div class="mini-log-stream" id="mini-logs">
+                            <div class="log-row">System ready. Waiting for tasks...</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 2: FILE MANAGER -->
+            <section id="tab-file-manager" class="tab-pane">
+                <div class="action-bar card">
+                    <div class="form-row">
+                        <div class="form-group flex-2">
+                            <label>Target Directory Path</label>
+                            <input type="text" id="fm-dir" class="form-control" value="data/sample_files">
+                        </div>
+                        <div class="form-group flex-1">
+                            <label>Rule Strategy</label>
+                            <select id="fm-rule" class="form-control">
+                                <option value="category">Category (Docs, Images, etc.)</option>
+                                <option value="extension">File Extension</option>
+                                <option value="date">Modification Date (YYYY-MM)</option>
+                                <option value="size">File Size Tier</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-primary" id="btn-fm-scan">🔍 Scan Directory</button>
+                        <button class="btn btn-success" id="btn-fm-organize">🚀 Organize Files</button>
+                        <button class="btn btn-warning" id="btn-fm-duplicates">🔎 Find Duplicates</button>
+                        <button class="btn btn-secondary" id="btn-fm-rename-modal">✏️ Batch Rename</button>
+                    </div>
+                </div>
+
+                <div class="stats-ribbon card" id="fm-stats-box" style="display:none;">
+                    <div class="stat-item"><b>Total Files:</b> <span id="fm-total-files">0</span></div>
+                    <div class="stat-item"><b>Total Size:</b> <span id="fm-total-size">0 B</span></div>
+                    <div class="stat-item"><b>Categories:</b> <span id="fm-categories">-</span></div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Directory Content & Action Output</h3>
+                        <span id="fm-item-count" class="badge-tag">0 items</span>
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table" id="fm-table">
+                            <thead>
+                                <tr>
+                                    <th>Filename</th>
+                                    <th>Category</th>
+                                    <th>Size</th>
+                                    <th>Modified</th>
+                                    <th>Status / Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="fm-tbody">
+                                <tr><td colspan="5" class="text-muted text-center">Click 'Scan Directory' to inspect files.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 3: EXCEL & DATA STUDIO -->
+            <section id="tab-excel-studio" class="tab-pane">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>📥 Upload & Ingest Dataset (CSV, XLSX, JSON)</h3>
+                    </div>
+                    <div class="upload-dropzone" id="excel-dropzone">
+                        <input type="file" id="excel-file-input" accept=".csv,.xlsx,.xls,.json" style="display:none;">
+                        <div class="drop-icon">📊</div>
+                        <h4>Drag & Drop Data File Here, or <button class="btn btn-sm btn-primary" onclick="document.getElementById('excel-file-input').click()">Browse Files</button></h4>
+                        <p>Supports CSV, TSV, XLSX, XLS, and JSON formats up to 64MB.</p>
+                    </div>
+                </div>
+
+                <div id="data-studio-controls" class="card" style="display:none;">
+                    <div class="studio-actions-row">
+                        <div class="dataset-meta-pill">
+                            Dataset: <b id="ds-name">sample.csv</b> (<span id="ds-rows">0</span> rows × <span id="ds-cols">0</span> cols)
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn btn-warning" id="btn-ds-clean">🧹 Auto Clean Dataset</button>
+                            <button class="btn btn-primary" id="btn-ds-export">📥 Export Styled Excel (.xlsx)</button>
+                        </div>
+                    </div>
+
+                    <div class="summary-chips-grid" id="ds-summary-chips"></div>
+
+                    <div class="table-container" style="max-height: 450px;">
+                        <table class="data-table" id="ds-preview-table">
+                            <thead id="ds-thead"></thead>
+                            <tbody id="ds-tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 4: PDF STUDIO -->
+            <section id="tab-pdf-studio" class="tab-pane">
+                <div class="pdf-split-grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>📑 PDF Report & Invoice Synthesizer</h3>
+                        </div>
+                        <div class="form-group">
+                            <label>Document Type</label>
+                            <select id="pdf-doc-type" class="form-control">
+                                <option value="report">Executive Operational Report</option>
+                                <option value="invoice">Commercial B2B Invoice</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Report Title / Client Name</label>
+                            <input type="text" id="pdf-title" class="form-control" value="Q3 Corporate Automation Digest">
+                        </div>
+                        <div class="form-group">
+                            <label>Executive Summary / Description</label>
+                            <textarea id="pdf-summary" class="form-control" rows="3">This automated executive report presents the Q3 operational audit and performance metrics synthesized by DataFlow Automator Pro.</textarea>
+                        </div>
+                        <button class="btn btn-primary btn-block" id="btn-generate-pdf">⚡ Synthesize & Preview PDF</button>
+                    </div>
+
+                    <div class="card preview-card">
+                        <div class="card-header">
+                            <h3>👁️ Live PDF Viewer</h3>
+                            <a id="pdf-download-link" href="#" class="btn btn-sm btn-success" style="display:none;" download>Download PDF</a>
+                        </div>
+                        <div class="pdf-frame-wrapper" id="pdf-viewer-wrapper">
+                            <div class="text-muted text-center" style="padding: 60px 20px;">
+                                Synthesize a report or invoice to view real-time PDF output.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 5: WEB SCRAPER -->
+            <section id="tab-web-scraper" class="tab-pane">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>🌐 Multi-Source Web Scraper Console</h3>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group flex-1">
+                            <label>Extraction Target Preset</label>
+                            <select id="scraper-source" class="form-control">
+                                <option value="books">Books & E-Commerce Catalog (Pricing, Rating, Stock)</option>
+                                <option value="news">Hacker News (Tech Headlines, Points, Authors)</option>
+                                <option value="quotes">Quotes Feed (Quotes, Authors, Tags)</option>
+                                <option value="custom">Custom Web URL Extractor</option>
+                            </select>
+                        </div>
+                        <div class="form-group flex-1" id="custom-url-group" style="display:none;">
+                            <label>Target Web URL</label>
+                            <input type="text" id="scraper-url" class="form-control" placeholder="https://example.com">
+                        </div>
+                        <div class="form-group flex-sm">
+                            <label>Pages / Batches</label>
+                            <input type="number" id="scraper-pages" class="form-control" value="2" min="1" max="10">
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-primary" id="btn-run-scrape">🚀 Run Web Scraper</button>
+                        <button class="btn btn-secondary" id="btn-scrape-to-excel" style="display:none;">📊 Export to Excel</button>
+                    </div>
+                </div>
+
+                <div class="card" id="scrape-results-card" style="display:none;">
+                    <div class="card-header">
+                        <h3>Harvested Data Records</h3>
+                        <span id="scrape-record-count" class="badge-tag">0 records</span>
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table" id="scrape-table">
+                            <thead id="scrape-thead"></thead>
+                            <tbody id="scrape-tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 6: EMAIL CENTER -->
+            <section id="tab-email-center" class="tab-pane">
+                <div class="email-split-grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>✉️ Automated Email Dispatcher</h3>
+                        </div>
+                        <div class="form-group">
+                            <label>Recipient Email Address</label>
+                            <input type="email" id="email-to" class="form-control" value="client@company.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Subject Line</label>
+                            <input type="text" id="email-subject" class="form-control" value="Weekly Automation Performance Digest">
+                        </div>
+                        <div class="form-group">
+                            <label>HTML Template</label>
+                            <select id="email-template" class="form-control">
+                                <option value="executive_report">Executive Report Delivery (Jinja2)</option>
+                                <option value="invoice_notification">Invoice Notification (Jinja2)</option>
+                                <option value="alert_notification">System Alert & Warning (Jinja2)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Custom Body Message</label>
+                            <textarea id="email-body" class="form-control" rows="3">All automated pipelines have completed without anomalies. Attached reports contain verified metrics.</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label><input type="checkbox" id="email-mock-mode" checked> Use Local Sandbox Mode (Safe Test)</label>
+                        </div>
+                        <button class="btn btn-primary btn-block" id="btn-send-email">📤 Dispatch Automated Email</button>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>📬 Dispatched Mailbox (Sandbox & Live)</h3>
+                            <button class="btn btn-sm btn-ghost" onclick="fetchEmailHistory()">Refresh</button>
+                        </div>
+                        <div class="email-history-list" id="email-history-list">
+                            <div class="text-muted text-center" style="padding: 40px;">No sent emails recorded yet.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 7: PIPELINES -->
+            <section id="tab-pipelines" class="tab-pane">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>⚡ End-to-End Automated Pipelines</h3>
+                    </div>
+                    <div class="pipelines-grid">
+                        <div class="pipeline-card">
+                            <div class="pipe-icon">🛒</div>
+                            <h4>E-Commerce Intelligence Pipeline</h4>
+                            <p>Scrapes live catalog data → Cleans dataset with Pandas → Generates styled Excel spreadsheet → Synthesizes Executive PDF report → Dispatches email digest.</p>
+                            <button class="btn btn-primary" onclick="runPipeline('ecommerce')">🚀 Execute Pipeline</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" id="pipeline-status-card" style="display:none;">
+                    <div class="card-header">
+                        <h3>Pipeline Execution Status</h3>
+                        <span id="pipe-badge" class="badge-tag">Running</span>
+                    </div>
+                    <div id="pipe-steps-list" class="pipe-steps-container"></div>
+                </div>
+            </section>
+
+            <!-- TAB 8: LIVE LOGS -->
+            <section id="tab-live-logs" class="tab-pane">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>📜 Centralized System & Task Execution Logs</h3>
+                        <div class="btn-group">
+                            <button class="btn btn-sm btn-danger" onclick="clearLogs()">Clear Logs</button>
+                            <button class="btn btn-sm btn-primary" onclick="fetchLogs()">Refresh</button>
+                        </div>
+                    </div>
+                    <div class="log-terminal" id="log-terminal">
+                        <div class="log-line text-cyan">[SYSTEM] Logger initialized. Streaming real-time updates...</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 9: PROJECT REPORT -->
+            <section id="tab-project-report" class="tab-pane">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>📕 Official Project Report (PDF Deliverable)</h3>
+                        <a href="/api/download/project-report" class="btn btn-success" target="_blank" download="Project_Report.pdf">📥 Download PDF Report</a>
+                    </div>
+                    <div class="pdf-frame-wrapper" style="height: 700px;">
+                        <iframe src="/api/download/project-report" width="100%" height="100%" style="border:none; border-radius: 8px;"></iframe>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast"></div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

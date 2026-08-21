@@ -1,0 +1,13 @@
+{
+  "id": "mail_20260821_200249_71",
+  "timestamp": "2026-08-21 20:02:49",
+  "from": "automator@dataflowpro.local",
+  "to": [
+    "client@example.com"
+  ],
+  "subject": "Test Automation Dispatch",
+  "attachments": [],
+  "mock_mode": true,
+  "status": "delivered_mock_sandbox",
+  "html_preview": "\n    <div style=\"font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 620px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; background: #ffffff;\">\n        <div style=\"background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); padding: 24px; color: #ffffff; text-align: left;\">\n            <h1 style=\"margin: 0; font-size: 22px; font-weight: 600; color: #38bdf8;\">DataFlow Automator Pro</h1>\n            <p style=\"margin: 6px 0 0 0; font-size: 13px; color: #94a3b8;\">Automated Business Intelligence & Operational Digest</p>\n        </div>\n        <div style=\"padding: 24px; color: #334155; line-height: 1.6;\">\n            <h2 style=\"font-size: 18px; color: #0f172a; margin-top: 0;\">Test Title</h2>\n            <p>Hello <b>Valued Team</b>,</p>\n            <p>Test Message</p>\n            \n            \n            <div style=\"display: flex; gap: 12px; margin: 20px 0; background: #f8fafc; padding: 14px; border-radius: 6px; border: 1px solid #e2e8f0;\">\n                \n                <div style=\"flex: 1; text-align: center;\">\n                    <div style=\"font-size: 11px; text-transform: uppercase; color: #64748B; font-weight: 600;\">Status</div>\n                    <div style=\"font-size: 18px; font-weight: bold; color: #0284c7; margin-top: 4px;\">OK</div>\n                </div>\n                \n            </div>\n            \n\n            <p style=\"font-size: 13px; color: #64748b;\">Generated automatically at 2026-08-21 20:02:49 by DataFlow Workflow Engine.</p>\n        </div>\n        <div style=\"background: #f1f5f9; padding: 14px 24px; font-size: 12px; color: #64748b; border-top: 1px solid #e2e8f0; text-align: center;\">\n            &copy; 2026 DataFlow Systems. All rights reserved. | Automated Delivery\n        </div>\n    </div>\n    "
+}
