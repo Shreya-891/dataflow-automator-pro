@@ -1,0 +1,26 @@
+Transaction ID ,Customer Name ,Region,Product Category ,Revenue USD,Units Sold,Discount Rate
+TXN-1000,John Doe,North,Software,"$1,250.00",5.0,10%
+TXN-1001,Jane Smith,South,Cloud Services,"$4,500.50",12.0,5%
+TXN-1002,Acme Corp,East,Hardware,$850.00,,0%
+TXN-1003,Global Tech,West,Consulting,"$12,000.00",2.0,15%
+TXN-1004,John Doe,North,Software,"$1,250.00",5.0,10%
+TXN-1005,John Doe,North,Software,"$1,250.00",5.0,10%
+TXN-1006,Jane Smith,South,Cloud Services,"$4,500.50",12.0,5%
+TXN-1007,Acme Corp,East,Hardware,$850.00,,0%
+TXN-1008,Global Tech,West,Consulting,"$12,000.00",2.0,15%
+TXN-1009,John Doe,North,Software,"$1,250.00",5.0,10%
+TXN-1010,John Doe,North,Software,"$1,250.00",5.0,10%
+TXN-1011,Jane Smith,South,Cloud Services,"$4,500.50",12.0,5%
+TXN-1012,Acme Corp,East,Hardware,$850.00,,0%
+TXN-1013,Global Tech,West,Consulting,"$12,000.00",2.0,15%
+TXN-1014,John Doe,North,Software,"$1,250.00",5.0,10%
+TXN-1015,John Doe,North,Software,"$1,250.00",5.0,10%
+TXN-1016,Jane Smith,South,Cloud Services,"$4,500.50",12.0,5%
+TXN-1017,Acme Corp,East,Hardware,$850.00,,0%
+TXN-1018,Global Tech,West,Consulting,"$12,000.00",2.0,15%
+TXN-1019,John Doe,North,Software,"$1,250.00",5.0,10%
+TXN-1020,John Doe,North,Software,"$1,250.00",5.0,10%
+TXN-1021,Jane Smith,South,Cloud Services,"$4,500.50",12.0,5%
+TXN-1022,Acme Corp,East,Hardware,$850.00,,0%
+TXN-1023,Global Tech,West,Consulting,"$12,000.00",2.0,15%
+TXN-1024,John Doe,North,Software,"$1,250.00",5.0,10%
